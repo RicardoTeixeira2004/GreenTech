@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+</head>
+<body>
+                <h1> CALCULADORA FINANCEIRA: ESTUFA TOMATE </h1>
+
+                Informe em metros quadrados o tamanho de seu plantio de <b>Tomate:</b>
+                <input id="mtq" type="text">
+                <br><br>
+                Informe a porcentagem de perda da safra devido a <b> Temperatura e Umidade:</b>
+                <input id="porcent" type="text">
+                <br><br>
+                Informe o lucro da venda da <b> Safra Restante: </b>
+                <input id="venda" type="text">
+                <br><br>
+
+                <button onclick="calcular()"> CALCULAR </button>
+                <br><br>
+
+                <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+
+            function calcular(){
+
+                div_msg.innerHTML = 
+
+                `Utilizando o sistema de Temperatura e Umidade a perda de safra diminuiria de <b>${(porcent.value)}%</b> para até <b>5%</b> <br>
+                um crescimento médio de <b>${95-(100-porcent.value)}%</b>, portanto os lucros atuais cresceriam de <b>R$${(venda.value)}</b> para até
+                <b>R$${Number(venda.value) + (Number((venda.value/100) * (95-(100-porcent.value))))}</b>, <br> com o lucro médio por metro quadrado aumentando, de <b>R$${(venda.value/mtq.value)}</b>
+                para <b>R$${(Number(venda.value) + (Number((venda.value/100) * (95-(100-porcent.value))))) / mtq.value}</b>, e com o atual tamanho de seu
+                plantio seu lucro poderá chegar até <b> ${(mtq.value/500)*15}</b>  mil por ano. ` ;
+ 
+                }
+
+                              
+</script>
